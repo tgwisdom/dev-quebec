@@ -1,0 +1,137 @@
+@font-face {
+  font-family: PerfectDark;
+  src: url(./fonts/pdark.ttf);
+}
+
+@font-face {
+  font-family: Prototype;
+  src: url(./fonts/Prototype.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Prototype;
+}
+
+p,
+iconify-icon {
+  font-size: 2rem;
+  color: #000;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #44006d 0%,
+    rgba(220, 164, 255, 0.3125) 99.99%,
+    rgba(215, 149, 255, 0) 100%
+  );
+}
+
+header {
+  padding: 1.7rem;
+}
+
+h1 {
+  font-family: PerfectDark;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.8rem;
+  line-height: 81px;
+  text-align: center;
+  color: #f6eb9d;
+  text-shadow: 0px 10px 50px #ffc700;
+}
+
+main {
+  min-height: 56vh;
+}
+
+.flex_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button_container {
+  margin: 1.5rem auto;
+}
+
+.buttons {
+  cursor: pointer;
+  box-shadow: -2px -8px 12px 11px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 242px;
+}
+.green {
+  background: linear-gradient(
+    180deg,
+    #36d832 45.83%,
+    rgba(26, 171, 23, 0.54717) 99.99%,
+    rgba(11, 97, 9, 0) 100%
+  );
+}
+.blue {
+  background: linear-gradient(
+    180deg,
+    #5b76ff 36.46%,
+    rgba(29, 45, 131, 0.333333) 99.99%,
+    rgba(26, 42, 128, 0) 100%
+  );
+}
+.red {
+  background: linear-gradient(
+    180deg,
+    #ff5656 62.5%,
+    rgba(131, 30, 30, 0.954246) 99.96%,
+    rgba(141, 37, 37, 0.177083) 99.97%,
+    rgba(96, 18, 18, 0) 99.98%
+  );
+}
+
+.dropdown {
+  box-sizing: border-box;
+  background: linear-gradient(
+    107.93deg,
+    rgba(217, 217, 217, 0.651) 1.51%,
+    rgba(217, 217, 217, 0) 100%
+  );
+  box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.dropdown_flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+.dropdown_flex p,
+.dropdown_flex a,
+.dropdown_flex iconify-icon {
+  mix-blend-mode: overlay;
+  color: #000;
+}
+.dropdown_flex a {
+  text-decoration: underline;
+}
+
+footer {
+  padding: 1rem 0 3rem 0;
+}
+footer p {
+  text-align: center;
+  font-size: 1.3rem;
+}
+footer a {
+  color: #44006d;
+  text-decoration: underline;
+}

@@ -4,22 +4,165 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CIS | Users</title>
-
-    <style>
-      p {
-        font-weight: bold;
-      }
-    </style>
+    <link rel="shortcut icon" href="./javascript.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Back Row Heroes</title>
   </head>
+
   <body>
-    <ul>
-      <% for (let user of users) { %>
-      <li>
-        <p><%= user.name %>:</p>
-        <a href="<%= user.link %>" target="_blank"><%= user.link %></a>
-      </li>
-      <% } %>
-    </ul>
+    <header>
+      <a href="/" style="text-decoration: none">
+        <h1>BACK ROW HEROES</h1>
+      </a>
+    </header>
+
+    <main>
+      <div class="flex_container">
+        <div class="button_container">
+          <button class="buttons green" onclick="handleClick(this)">
+            <p>John Doe</p>
+            <iconify-icon icon="gridicons:dropdown"></iconify-icon>
+          </button>
+
+          <div class="dropdown" style="position: absolute" hidden>
+            <div class="dropdown_flex">
+              <iconify-icon icon="akar-icons:github-fill"></iconify-icon>
+              <a
+                href="https://github.com/KhoiUna"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>JohnDoe</p>
+              </a>
+            </div>
+            <div class="dropdown_flex">
+              <iconify-icon icon="bi:globe"></iconify-icon>
+              <a
+                href="https://www.khoiuna.info"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>Link</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="button_container">
+          <button class="buttons blue" onclick="handleClick(this)">
+            <p>Jane Doe</p>
+            <iconify-icon icon="gridicons:dropdown"></iconify-icon>
+          </button>
+
+          <div class="dropdown" style="position: absolute" hidden>
+            <div class="dropdown_flex">
+              <iconify-icon icon="akar-icons:github-fill"></iconify-icon>
+              <a
+                href="https://github.com/KhoiUna"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>JaneDoe</p>
+              </a>
+            </div>
+            <div class="dropdown_flex">
+              <iconify-icon icon="bi:globe"></iconify-icon>
+              <a
+                href="https://www.khoiuna.info"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>Link</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="button_container">
+          <button class="buttons red" onclick="handleClick(this)">
+            <p>Khoi Nguyen</p>
+            <iconify-icon icon="gridicons:dropdown"></iconify-icon>
+          </button>
+
+          <div class="dropdown" style="position: absolute" hidden>
+            <div class="dropdown_flex">
+              <iconify-icon icon="akar-icons:github-fill"></iconify-icon>
+              <a
+                href="https://github.com/KhoiUna"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>KhoiUna</p>
+              </a>
+            </div>
+            <div class="dropdown_flex">
+              <iconify-icon icon="bi:globe"></iconify-icon>
+              <a
+                href="https://www.khoiuna.info"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>Link</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>A product of <a href="https://www.khoiuna.info">Khoi Nguyen</a></p>
+    </footer>
+
+    <script
+      type="module"
+      src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
+    ></script>
+    <!-- <script type="text/javascript" src="./main.js"></script> -->
+    <script>
+      const extractPixel = (widthString) => Number(widthString.split("px")[0]);
+
+      const showDropdown = (element) => {
+        const buttonWidth = element.clientWidth;
+        const buttonContainer = element.parentNode;
+
+        const dropdown = buttonContainer.children[1];
+        dropdown.hidden = !dropdown.hidden;
+        dropdown.style.width = `${buttonWidth}px`;
+      };
+
+      const handleClick = (element) => {
+        showDropdown(element);
+
+        const buttonContainer = element.parentNode;
+        const dropdown = buttonContainer.children[1];
+        const dropdownIcon = element.children[1];
+
+        const dropdownWidth = extractPixel(dropdown.style.width);
+        const buttonContainerMarginBottom = extractPixel(
+          window
+            .getComputedStyle(buttonContainer)
+            .getPropertyValue("margin-bottom")
+        );
+
+        const RATIO_FOR_SPACE = 1.6;
+        const spaceForDropdown = dropdownWidth / RATIO_FOR_SPACE;
+
+        // Add space and rotate dropdown icon when dropdown is shown
+        if (dropdown.hidden) {
+          dropdownIcon.style.transform = "rotate(360deg)";
+
+          buttonContainer.style.marginBottom = `${
+            buttonContainerMarginBottom - spaceForDropdown
+          }px`;
+        } else {
+          dropdownIcon.style.transform = "rotate(180deg)";
+
+          buttonContainer.style.marginBottom = `${
+            buttonContainerMarginBottom + spaceForDropdown
+          }px`;
+        }
+      };
+    </script>
   </body>
 </html>
