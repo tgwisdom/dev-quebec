@@ -1,9 +1,19 @@
 const express = require('express')
 const path = require('node:path')
 const bodyParser = require('body-parser')
-
+const mongoose = require("mongoose");
 const app = express()
 
+app.use(bodyParser.urlencoded({extended: true}));
+
+mongoose.connect("mongodb+srv://Inferno:BackRowHeros@cluster0.2vn7fph.mongodb.net/NotesDB")
+
+const notesSchema = {
+  title: String,
+  content: String
+}
+
+const Note = mongoose.model("Note", notesSchema);
 
 //Start of mongo code
 const { MongoClient } = require('mongodb');
@@ -77,14 +87,21 @@ app.get('/', function (req, res) {
       );
 
 })
-
-
 app.post("/saveToNode", (req, res) => {
   console.log(req.body);
   console.group(req.body.userName);
   res.render('index', { userName: req.body.userName });
 
 })
+
+app.post("/", function(req, res){
+  let newNote = new Note({
+    title: req.body.title,
+    content: req.body.content
+  })
+  newNote.save();
+})
+
 
 app.listen(process.env.PORT || 3000,
   () => console.log("Server is running..."));
