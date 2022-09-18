@@ -18,9 +18,15 @@
 
     <main>
       <div class="flex_container">
+        <% for (let i = 0; i < users.length; i++) { %> <% let user = users[i] %>
+        <% const colorArray = ["green", "blue", "red"] %>
+
         <div class="button_container">
-          <button class="buttons green" onclick="handleClick(this)">
-            <p>John Doe</p>
+          <button
+            class="buttons <%= colorArray[i] %>"
+            onclick="handleClick(this)"
+          >
+            <p><%= user.name %></p>
             <iconify-icon icon="gridicons:dropdown"></iconify-icon>
           </button>
 
@@ -32,13 +38,13 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <p>JohnDoe</p>
+                <p><%= user.name %></p>
               </a>
             </div>
             <div class="dropdown_flex">
               <iconify-icon icon="bi:globe"></iconify-icon>
               <a
-                href="https://www.khoiuna.info"
+                href="<%= user.link %>"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -47,66 +53,7 @@
             </div>
           </div>
         </div>
-
-        <div class="button_container">
-          <button class="buttons blue" onclick="handleClick(this)">
-            <p>Jane Doe</p>
-            <iconify-icon icon="gridicons:dropdown"></iconify-icon>
-          </button>
-
-          <div class="dropdown" style="position: absolute" hidden>
-            <div class="dropdown_flex">
-              <iconify-icon icon="akar-icons:github-fill"></iconify-icon>
-              <a
-                href="https://github.com/KhoiUna"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <p>JaneDoe</p>
-              </a>
-            </div>
-            <div class="dropdown_flex">
-              <iconify-icon icon="bi:globe"></iconify-icon>
-              <a
-                href="https://www.khoiuna.info"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <p>Link</p>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="button_container">
-          <button class="buttons red" onclick="handleClick(this)">
-            <p>Khoi Nguyen</p>
-            <iconify-icon icon="gridicons:dropdown"></iconify-icon>
-          </button>
-
-          <div class="dropdown" style="position: absolute" hidden>
-            <div class="dropdown_flex">
-              <iconify-icon icon="akar-icons:github-fill"></iconify-icon>
-              <a
-                href="https://github.com/KhoiUna"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <p>KhoiUna</p>
-              </a>
-            </div>
-            <div class="dropdown_flex">
-              <iconify-icon icon="bi:globe"></iconify-icon>
-              <a
-                href="https://www.khoiuna.info"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <p>Link</p>
-              </a>
-            </div>
-          </div>
-        </div>
+        <% } %>
       </div>
     </main>
 

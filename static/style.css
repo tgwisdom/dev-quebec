@@ -69,7 +69,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 242px;
+  /* min-width: 298px; */
+  width: 21rem;
 }
 .green {
   background: linear-gradient(
