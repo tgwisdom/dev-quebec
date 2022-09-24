@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const UsersUtil = require("./utils/UserUtil");
@@ -18,11 +19,12 @@ app.get("/", async (req, res) => {
   });
 });
 
-app.post("/", (req, res) => {
-  // TODO: save to mongo
-  //
+app.post("/submit", async (req, res) => {
+  const response = await UsersUtil.saveUser(req.body);
 
-  res.json("ok");
+  if (!response) console.error(response);
+
+  res.redirect("/");
 });
 
 app.listen(PORT, () =>

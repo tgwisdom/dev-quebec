@@ -55,6 +55,25 @@
         </div>
         <% } %>
       </div>
+
+      <div class="container form_container">
+        <h2>BECOME ONE</h2>
+
+        <form method="POST" action="/submit">
+          <input required name="name" placeholder="Your name" />
+
+          <div>
+            <textarea
+              required
+              name="link"
+              style="width: auto"
+              placeholder="Add your link here"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit_button">ADD TO MONGO DB</button>
+        </form>
+      </div>
     </main>
 
     <footer>
@@ -65,7 +84,6 @@
       type="module"
       src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
     ></script>
-    <!-- <script type="text/javascript" src="./main.js"></script> -->
     <script>
       const extractPixel = (widthString) => Number(widthString.split("px")[0]);
 

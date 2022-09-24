@@ -1,8 +1,5 @@
 const { MongoClient } = require("mongodb");
 
-const DB_URI =
-  "mongodb+srv://Inferno:BackRowHeros@cluster0.2vn7fph.mongodb.net/test";
-
 const connectDb = async (client) => {
   try {
     await client.connect();
@@ -11,7 +8,7 @@ const connectDb = async (client) => {
   }
 };
 
-const client = new MongoClient(DB_URI);
+const client = new MongoClient(process.env.MONGO_URI);
 connectDb(client).catch(console);
 
 module.exports = client;

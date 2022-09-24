@@ -14,4 +14,22 @@ module.exports = class UsersUtil {
       return false;
     }
   }
+
+  static async saveUser(userData) {
+    try {
+      userData.name = userData.name.trim();
+      userData.link = userData.link.trim();
+
+      const collection = client.db("khoi").collection("user");
+
+      const response = await collection.insertOne(userData);
+
+      if (!response) throw new Error("Error saving user");
+
+      return true;
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
+  }
 };
