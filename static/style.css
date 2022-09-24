@@ -140,6 +140,15 @@ textarea:focus {
     rgba(96, 18, 18, 0) 99.98%
   );
 }
+.others {
+  background: linear-gradient(
+    180deg,
+    #fff676 62.5%,
+    rgba(255, 220, 19, 0.954) 99.96%,
+    rgba(255, 240, 106, 0.177) 99.97%,
+    rgba(96, 18, 18, 0) 99.98%
+  );
+}
 
 .dropdown {
   box-sizing: border-box;

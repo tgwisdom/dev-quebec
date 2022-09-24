@@ -23,7 +23,7 @@
 
         <div class="button_container">
           <button
-            class="buttons <%= colorArray[i] %>"
+            class="buttons <%= colorArray[i] ? colorArray[i] : 'others' %>"
             onclick="handleClick(this)"
           >
             <p><%= user.name %></p>
@@ -71,12 +71,20 @@
             ></textarea>
           </div>
 
-          <button type="submit" class="submit_button">ADD TO MONGO DB</button>
+          <button type="submit" class="submit_button">SUBMIT</button>
         </form>
       </div>
     </main>
 
     <footer>
+      <p style="margin: 0.5rem">
+        <a
+          href="https://github.com/FlameRender/legendary-octo-journey"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Source code</a
+        >
+      </p>
       <p>A product of <a href="/">BackRowHeroes</a></p>
     </footer>
 
