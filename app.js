@@ -19,6 +19,14 @@ app.get("/", async (req, res) => {
   });
 });
 
+app.get("/oscar", async (req, res) => {
+  const users = await UsersUtil.getUsers();
+
+  res.render("oscar", {
+    users: users,
+  });
+});
+
 app.post("/submit", async (req, res) => {
   const response = await UsersUtil.saveUser(req.body);
 

@@ -85,7 +85,7 @@
           >Source code</a
         >
       </p>
-      <p>A product of <a href="/">BackRowHeroes</a></p>
+      <p>A product of <a href="/oscar">BackRowHeroes</a></p>
     </footer>
 
     <script
@@ -124,6 +124,21 @@
         // Add space and rotate dropdown icon when dropdown is shown
         if (dropdown.hidden) {
           dropdownIcon.style.transform = "rotate(360deg)";
+
+          buttonContainer.style.marginBottom = `${
+            buttonContainerMarginBottom - spaceForDropdown
+          }px`;
+        } else {
+          dropdownIcon.style.transform = "rotate(180deg)";
+
+          buttonContainer.style.marginBottom = `${
+            buttonContainerMarginBottom + spaceForDropdown
+          }px`;
+        }
+      };
+    </script>
+  </body>
+</html>
 
           buttonContainer.style.marginBottom = `${
             buttonContainerMarginBottom - spaceForDropdown

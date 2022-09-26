@@ -49,6 +49,10 @@ h2 {
   font-size: 4rem;
 }
 
+li{
+  margin-top: 10px;
+}
+
 main {
   min-height: 56vh;
 }
