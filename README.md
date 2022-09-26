@@ -1,8 +1,7 @@
 # Back Row Heros :sunglasses:
+fall 2022 spin up v3.0
 
 This application was built using an angular framework.
-It is an homage to others that you dont have to be in the front row to do well.
-You just have to sit by Khoi.
 
 ## What is Angular?
 <img src="https://www.ngdevelop.tech/wp-content/uploads/2017/12/Angular_Architecture.png" alt="Angular Diagram" style="height: 250px; width:300px;"/>
