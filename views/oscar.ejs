@@ -1,71 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./javascript.svg" type="image/x-icon" />
+    <title>Back Row Heroes</title>
   </head>
+
   <body>
-    <h1>Behind The Scenes Modules</h1>
+    <main style="padding: 1.2rem">
+      <h1>Behind The Scenes</h1>
 
-    <ul
-      style="font-size: 20px; color: white; margin-left: 2rem; margin-top: 5rem"
-    >
-      <li>
-        Node: An asychronous event-driven javascript runtime. Used to execute
-        and run web server code.
-      </li>
+      <ul
+        style="
+          color: white;
+          margin-top: 1.5rem;
+          padding: 1rem 2.5rem;
+          border: 3px solid white;
+          border-radius: 10px;
+          background-color: rgba(255, 255, 255, 0.7);
+          color: black;
+          font-size: 1.5rem;
+        "
+      >
+        <li>
+          Node: An asychronous event-driven javascript runtime. Used to execute
+          and run web server code.
+        </li>
 
-      <li>
-        Heroku: Cloud based platform as a service used to host our website.
-      </li>
+        <li>
+          Heroku: Cloud based platform as a service used to host our website.
+        </li>
 
-      <li>
-        GitHub: Website used to collaborate with a team to implement fixes,
-        design, and share code.
-      </li>
+        <li>
+          GitHub: Website used to collaborate with a team to implement fixes,
+          design, and share code.
+        </li>
 
-      <li>
-        Express: Node web application. Currently being used to listen, and serve
-        initial web requests.
-      </li>
+        <li>
+          Express: Node web application. Currently being used to listen, and
+          serve initial web requests.
+        </li>
 
-      <li>
-        npm: Package manager used to initialize json files and install services
-        such as express.
-      </li>
+        <li>
+          npm: Package manager used to initialize json files and install
+          services such as express.
+        </li>
 
-      <li>
-        ejs: Embedded JavaScript Templating, Allows for javaScript code to be
-        embeded in a template language that is then used to generate HTML.
-      </li>
+        <li>
+          ejs: Embedded JavaScript Templating, Allows for javaScript code to be
+          embeded in a template language that is then used to generate HTML.
+        </li>
 
-      <li>
-        Mongodb: Document database used to retreive and store data to and from
-        the website.
-      </li>
+        <li>
+          Mongodb: Document database used to retreive and store data to and from
+          the website.
+        </li>
 
-      <li>Nodemon: Allows for updates to take immediate effect.</li>
+        <li>Nodemon: Allows for updates to take immediate effect.</li>
 
-      <li>
-        Body-parser: Middleware that extracts the entire body portion of an
-        incoming request stream and exposes it on req. body
-      </li>
+        <li>
+          Body-parser: Middleware that extracts the entire body portion of an
+          incoming request stream and exposes it on req. body
+        </li>
 
-      <li>VS-Code: Microsoft source code editor.</li>
+        <li>VS-Code: Microsoft source code editor.</li>
 
-      <li>
-        dotenv: A zero dependancy module that loads enviroment variables from a
-        .env file into process.env
-      </li>
-    </ul>
+        <li>
+          dotenv: A zero dependancy module that loads enviroment variables from
+          a .env file into process.env
+        </li>
+      </ul>
+
+      <button
+        style="
+          background-color: #ff5656;
+          cursor: pointer;
+          border-radius: 10px;
+          margin: 1rem 0;
+          padding: 10px;
+          font-size: 1.5rem;
+        "
+        type="button"
+        onclick="history.back()"
+      >
+        Go back!
+      </button>
+    </main>
   </body>
-
-  <form style="margin-top: 5%">
-    <input
-      style="background-color: #ff5656"
-      62.5%;
-      type="button"
-      value="Go back!"
-      onclick="history.back()"
-    />
-  </form>
 </html>
