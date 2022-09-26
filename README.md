@@ -8,7 +8,21 @@ This application was built using an angular framework.
 
 Angular Is a framework used to aid developers in the creation of single page client applications. 
 
-As the Image above shows the client interacts with the template and can trigger events that will 
+As the Image above shows the client interacts with the template and can trigger events that will activate other services on the server.
+
+In our example we use a mongoDB via atlas as well as EJS to perform CRUD operations.
+Using code such as get, post, put, and delete
+
+```javascript
+app.post("/submit", async (req, res) => {
+  const response = await UsersUtil.saveUser(req.body);
+
+  if (!response) console.error(response);
+
+  res.redirect("/");
+});
+```
+
 
 
 # View Our Story Card!
