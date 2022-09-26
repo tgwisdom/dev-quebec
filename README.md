@@ -22,7 +22,7 @@ app.post("/submit", async (req, res) => {
   res.redirect("/");
 });
 ```
-More Information on modules can be found in the [bottom link](https://back-row-heros.herokuapp.com/oscar) of our application!
+More Information on modules can be found in the bottom link of our application!
 
 # View Our Story Card!
 
