@@ -1,107 +1,32 @@
-const express = require('express')
-const path = require('node:path')
-const bodyParser = require('body-parser')
-const mongoose = require("mongoose");
-const app = express()
+require("dotenv").config();
+const express = require("express");
+const bodyParser = require("body-parser");
+const UsersUtil = require("./utils/UserUtil");
+const app = express();
 
-app.use(bodyParser.urlencoded({extended: true}));
+const { PORT = 3000 } = process.env;
 
-mongoose.connect("mongodb+srv://Inferno:BackRowHeros@cluster0.2vn7fph.mongodb.net/NotesDB")
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("static"));
+app.set("view engine", "ejs");
 
-const notesSchema = {
-  title: String,
-  content: String
-}
+app.get("/", async (req, res) => {
+  const users = await UsersUtil.getUsers();
 
-const Note = mongoose.model("Note", notesSchema);
+  res.render("index", {
+    users: users,
+  });
+});
 
-//Start of mongo code
-const { MongoClient } = require('mongodb');
+app.post("/submit", async (req, res) => {
+  const response = await UsersUtil.saveUser(req.body);
 
-async function main() {
-    /**
-     * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
-     * See https://docs.mongodb.com/ecosystem/drivers/node/ for more details
-     */
-    const uri = "mongodb+srv://Inferno:BackRowHeros@cluster0.2vn7fph.mongodb.net/test";
+  if (!response) console.error(response);
 
-    /**
-     * The Mongo Client you will use to interact with your database
-     * See https://mongodb.github.io/node-mongodb-native/3.6/api/MongoClient.html for more details
-     * In case: '[MONGODB DRIVER] Warning: Current Server Discovery and Monitoring engine is deprecated...'
-     * pass option { useUnifiedTopology: true } to the MongoClient constructor.
-     * const client =  new MongoClient(uri, {useUnifiedTopology: true})
-     */
-    const client = new MongoClient(uri);
+  res.redirect("/");
+});
 
-    try {
-        // Connect to the MongoDB cluster
-        await client.connect();
-
-        // Make the appropriate DB calls
-        await listDatabases(client);
-
-    } catch (e) {
-        console.error(e);
-    } finally {
-        // Close the connection to the MongoDB cluster
-        await client.close();
-    }
-}
-
-main().catch(console.error);
-
-/**
- * Print the names of all available databases
- * @param {MongoClient} client A MongoClient that is connected to a cluster
- */
-async function listDatabases(client) {
-    databasesList = await client.db().admin().listDatabases();
-
-    console.log("Databases:");
-    databasesList.databases.forEach(db => console.log(` - ${db.name}`));
-};
-
-// end of mongo code
-
-
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
-app.set('view engine', 'ejs');
-
-
-let userName = "UnKnoWn"; 
-let thatData = ""; 
-
-
-
-app.get('/', function (req, res) {
-    // res.sendFile(path.join(__dirname, "index.html" )); 
-    // res.send('Hello ' + userName + ' from Node/Express/Heroku');
-    // res.send(`Hello ${userName} from Node/Express/Heroku with Backticks!`)
-
-    res.render('index', 
-      { 
-        userName: userName
-      }
-      );
-
-})
-app.post("/saveToNode", (req, res) => {
-  console.log(req.body);
-  console.group(req.body.userName);
-  res.render('index', { userName: req.body.userName });
-
-})
-
-app.post("/", function(req, res){
-  let newNote = new Note({
-    title: req.body.title,
-    content: req.body.content
-  })
-  newNote.save();
-})
-
-
-app.listen(process.env.PORT || 3000,
-  () => console.log("Server is running..."));
+app.listen(PORT, () =>
+  console.log(`Server is running: http://localhost:${PORT}/`)
+);
