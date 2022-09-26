@@ -6,7 +6,8 @@ This application was built using an angular framework.
 ## What is Angular?
 <img src="https://www.ngdevelop.tech/wp-content/uploads/2017/12/Angular_Architecture.png" alt="Angular Diagram" style="height: 250px; width:300px;"/>
 
-Angular Is a framework used to help guide developers create single page client applications. 
+Angular Is a framework used to aid developers in the creation of single page client applications. 
+
 
 # View Our Story Card!
 
