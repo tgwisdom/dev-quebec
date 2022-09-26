@@ -8,6 +8,8 @@ This application was built using an angular framework.
 
 Angular Is a framework used to aid developers in the creation of single page client applications. 
 
+As the Image above shows the client interacts with the template and can trigger events that will 
+
 
 # View Our Story Card!
 
