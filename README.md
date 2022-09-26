@@ -11,7 +11,7 @@ Angular Is a framework used to aid developers in the creation of single page cli
 As the Image above shows the client interacts with the template and can trigger events that will activate other services on the server.
 
 In our example we use a mongoDB via atlas as well as EJS to perform CRUD operations.
-Using code such as get, post, put, and delete
+Using code such as get, post, put, and delete.
 
 ```javascript
 app.post("/submit", async (req, res) => {
@@ -22,8 +22,7 @@ app.post("/submit", async (req, res) => {
   res.redirect("/");
 });
 ```
-
-
+More Information on modules can be found in the [bottom link](https://back-row-heros.herokuapp.com/oscar) of our application!
 
 # View Our Story Card!
 
