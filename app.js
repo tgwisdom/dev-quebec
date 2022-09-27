@@ -51,7 +51,6 @@ app.post("/update/:userId", async (req, res) => {
   res.redirect("/");
 });
 
-
 app.listen(PORT, () =>
   console.log(`Server is running: http://localhost:${PORT}/`)
 );
