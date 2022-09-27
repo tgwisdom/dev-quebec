@@ -43,6 +43,15 @@ app.post("/delete/:userId", async (req, res) => {
   res.redirect("/");
 });
 
+app.post("/update/:userId", async (req, res) => {
+  const response = await UsersUtil.updateOne(req.params.userId, req.body);
+
+  if (!response) console.error(response);
+
+  res.redirect("/");
+});
+
+
 app.listen(PORT, () =>
   console.log(`Server is running: http://localhost:${PORT}/`)
 );
