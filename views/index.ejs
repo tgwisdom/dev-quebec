@@ -51,26 +51,28 @@
                 <p>Link</p>
               </a>
             </div>
+
             <div class="dropdown_flex">
-              <div class="dropdown_flex">
-                <iconify-icon
-                  style="color: red"
-                  icon="ant-design:delete-outlined"
-                ></iconify-icon>
-                <form action="/update/<%= user._id %>" method="POST">
-                  <input required name="name" placeholder="Your name" />
-  
-                  <div>
-                    <textarea
-                      required
-                      name="link"
-                      style="width: auto"
-                      placeholder="Add your link here"
-                    ></textarea>
-                    <button type="submit" class="submit_button">UPDATE</button>
-                  </div>
-                </form>
-              </div>
+              <iconify-icon
+               icon="ant-design:edit-filled">
+              </iconify-icon>
+              <form action="/update/<%= user._id %>" method="POST">
+                <input required name="name" placeholder="Your name" />
+
+                <div>
+                  <textarea
+                    required
+                    name="link"
+                    style="width: auto"
+                    placeholder="Add your link here"
+                  ></textarea>
+                  <button type="submit" class="submit_button">UPDATE</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="dropdown_flex">
+              
               <iconify-icon
                 style="color: red"
                 icon="ant-design:delete-outlined"
