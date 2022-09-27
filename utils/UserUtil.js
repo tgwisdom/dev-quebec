@@ -57,4 +57,29 @@ module.exports = class UsersUtil {
       return false;
     }
   }
+
+  static async updateOne(userId, userData) {
+    try {
+      const collection = client.db("khoi").collection("user");
+  
+      const filter = { _id: ObjectId(userId) }; // pass in userId 
+  
+      const updateDoc = {
+        $set: {
+          name: userData.name, // update the key 'username' with the new username from userData
+          link: userData.link
+         },
+       };
+  
+      const result = await collection.updateOne(filter, updateDoc);
+  
+      console.log(
+        `${result.matchedCount} document(s) matched the filter, updated ${result.modifiedCount} document(s)`,
+      );
+    } catch(error) {
+        console.error(error);
+        return false;
+    } 
+  }
+
 };
