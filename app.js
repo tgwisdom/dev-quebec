@@ -35,6 +35,14 @@ app.post("/submit", async (req, res) => {
   res.redirect("/");
 });
 
+app.post("/delete/:userId", async (req, res) => {
+  const response = await UsersUtil.deleteUser(req.params.userId);
+
+  if (!response) console.error(response);
+
+  res.redirect("/");
+});
+
 app.listen(PORT, () =>
   console.log(`Server is running: http://localhost:${PORT}/`)
 );
