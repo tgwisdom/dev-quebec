@@ -54,16 +54,23 @@
 
             <div class="dropdown_flex">
               <iconify-icon icon="ant-design:edit-filled"> </iconify-icon>
-              <form action="/update/<%= user._id %>" method="POST">
-                <input required name="name" placeholder="Your name" />
+              <form
+                action="/update/<%= user._id %>"
+                method="POST"
+                style="padding-right: 1rem"
+              >
+                <div style="text-align: right">
+                  <input required name="name" placeholder="Your name" />
+                </div>
 
-                <div>
+                <div style="text-align: right">
                   <textarea
                     required
                     name="link"
-                    style="width: auto"
+                    style="width: 244px"
                     placeholder="Add your link here"
                   ></textarea>
+
                   <button type="submit" class="submit_button">UPDATE</button>
                 </div>
               </form>
