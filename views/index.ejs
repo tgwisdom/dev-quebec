@@ -51,6 +51,32 @@
                 <p>Link</p>
               </a>
             </div>
+            <div class="dropdown_flex">
+              <iconify-icon
+                style="color: red"
+                icon="ant-design:delete-outlined"
+              ></iconify-icon>
+
+              <form action="/delete/<%= user._id %>" method="POST">
+                <input
+                  type="submit"
+                  value="Delete"
+                  style="
+                    font-size: 2rem;
+                    mix-blend-mode: overlay;
+                    color: #000;
+                    margin: 0;
+                    padding: 0;
+                    border: none;
+                    background-color: transparent;
+                    box-shadow: none;
+                    text-decoration: underline;
+                    color: #911e1e;
+                    cursor: pointer;
+                  "
+                />
+              </form>
+            </div>
           </div>
         </div>
         <% } %>

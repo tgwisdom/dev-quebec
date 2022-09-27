@@ -49,7 +49,7 @@ h2 {
   font-size: 4rem;
 }
 
-li{
+li {
   margin-top: 10px;
 }
 
@@ -116,7 +116,6 @@ textarea:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* min-width: 298px; */
   width: 21rem;
 }
 .green {
